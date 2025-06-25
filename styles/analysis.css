@@ -1,0 +1,42 @@
+.video-container {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.video {
+	flex: 1 1 calc(50% - 10px);
+	max-width: 48%;
+	margin: 10px;
+	text-align: center;
+}
+.player-name {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+#playerA, #playerB {
+	width: 100%;
+	height: 315px;
+}
+.controls {
+	text-align: center;
+	margin: 20px;
+}
+.controls button {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 5px;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+.positive-delta {
+	color: red;
+	font-weight: bold;
+}
+.negative-delta {
+	color: green;
+	font-weight: bold;
+}

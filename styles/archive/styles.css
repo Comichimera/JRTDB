@@ -1,0 +1,48 @@
+body {
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    background-color: #121212; /* Dark background */
+    color: #D1A8FF; /* Light purple text */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #D1A8FF; /* Light purple text for headings */
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e; /* Keep table background dark */
+    border: 2px solid #8C52FF; /* Brighter purple border */
+}
+
+th, td {
+    border: 1px solid #8C52FF; /* Brighter purple border for table cells */
+    padding: 8px;
+    text-align: center;
+    color: #D1A8FF; /* Light purple text in table cells */
+}
+
+th {
+    background-color: #4B2A7B; /* Darker purple for table header */
+    color: #D1A8FF; /* Light purple text in header */
+}
+
+tr:nth-child(even) {
+    background-color: #2c2c2c; /* Dark background for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #1e1e1e; /* Darker background for odd rows */
+}
+
+/* Subtle hover effects */
+tr:nth-child(odd):hover {
+    background-color: rgba(209, 168, 255, 0.1); /* Very dim light purple on hover for odd rows */
+}
+
+tr:nth-child(even):hover {
+    background-color: rgba(140, 82, 255, 0.1); /* Very dim darker purple on hover for even rows */
+}

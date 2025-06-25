@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Joy Ride Turbo Database</title>
+    <link rel="stylesheet" href="styles/ls.css">
+    <link rel="stylesheet" href="styles/analysis.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>The Joy Ride Turbo Database</h1>
+
+        <div id="videos-container" class="content">
+            <div class="video-container">
+                <!-- Player A -->
+                <div class="video">
+                    <h2 id="playerAName" class="player-name">Player A</h2>
+                    <div id="playerA"></div>
+                </div>
+                <!-- Player B -->
+                <div class="video">
+                    <h2 id="playerBName" class="player-name">Player B</h2>
+                    <div id="playerB"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="playPauseButton">Play/Pause Both Videos</button>
+            <button id="resetButton">Reset Both Videos</button><br>
+            <button id="minus1F">-1F</button>
+            <button id="plus1F">+1F</button>
+            <button id="minus15F">-15F</button>
+            <button id="plus15F">+15F</button>
+            <button id="minus30F">-30F</button>
+            <button id="plus30F">+30F</button>
+        </div>
+
+        <div id="splits-container" class="content">
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Split</th>
+                        <th id="playerATimeHeader">Player A Time</th>
+                        <th id="playerADeltaHeader">Player A Delta</th>
+                        <th id="playerBTimeHeader">Player B Time</th>
+                        <th id="playerBDeltaHeader">Player B Delta</th>
+                    </tr>
+                </thead>
+                <tbody id="splits-body">
+                    <!-- Rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <p><a href="index.html">Back to Root</a></p><br>
+        <p>If you encounter any errors while using this website, don't hesitate to report them using this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAU_FsZtUMjZNRUw1WkZTOEc3N05BUEgzUElCVUY0OS4u">feedback form</a></p><br>
+        <p>Made with ♥ by Comichimera</p>
+    </div>
+
+    <script src="scripts/analysis.js"></script>
+</body>
+</html>
