@@ -1,10 +1,42 @@
 /* styles/timerpage.css – overrides just for the timer page */
 
 /* make the timer display very large */
-#timer {
+#timers {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+#rtatimer,
+#cumtimer {
   font-size: 4em;
   text-align: center;
-  margin-bottom: 1em;
+}
+
+.timer-box {
+  background-color: #382159;      /* matches your odd-row purple */
+  border: 2px solid #FCCD4C;      /* same yellow accent as buttons & table */
+  padding: 1em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 8em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.timer-box h2 {
+  color: #FFFFFF;                 /* keep the big numbers white */
+  margin: 0;
+}
+
+.timer-label {
+  font-size: 1em;
+  color: #FCCD4C;                 /* yellow to match the border */
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* layout for the six single-digit inputs */
