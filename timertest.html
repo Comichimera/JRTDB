@@ -1,0 +1,63 @@
+<!-- timertest.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Joy Ride Turbo Database – Timer</title>
+  <!-- baseline styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- timer-page specific overrides -->
+  <link rel="stylesheet" href="styles/timerpage.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>The Joy Ride Turbo Database</h1>
+
+    <div id="page-container" class="content">
+      <!-- Timer display -->
+      <h2 id="timer">0:00:00</h2>
+
+      <!-- Split-time input boxes -->
+      <div id="split-input">
+        <input type="text" id="d0" maxlength="1" inputmode="numeric" />
+        <span>:</span>
+        <input type="text" id="d1" maxlength="1" inputmode="numeric" />
+        <input type="text" id="d2" maxlength="1" inputmode="numeric" />
+        <span class="dot">.</span>
+        <input type="text" id="d3" maxlength="1" inputmode="numeric" />
+        <input type="text" id="d4" maxlength="1" inputmode="numeric" />
+        <input type="text" id="d5" maxlength="1" inputmode="numeric" />
+      </div>
+
+      <!-- Start/Stop timer -->
+      <button id="startStop">Start</button>
+      <button id="reset">Reset</button> <br>
+
+      <!-- Splits table -->
+      <table id="splits">
+        <thead>
+          <tr>
+            <th>Split</th>
+            <th>Split Time</th>
+            <th>Segment Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- new rows get appended here -->
+        </tbody>
+      </table>
+    </div>
+
+    <p><a href="index.html">Back to Root</a></p><br>
+    <p>If you encounter any errors while using this website, don't hesitate to report them using this
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAU_FsZtUMjZNRUw1WkZTOEc3N05BUEgzUElCVUY0OS4u">
+        feedback form
+      </a>
+    </p><br>
+    <p>Made with ♥ by Comichimera</p>
+  </div>
+
+  <script src="scripts/timer.js"></script>
+</body>
+</html>

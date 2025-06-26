@@ -1,0 +1,84 @@
+/* styles/timerpage.css – overrides just for the timer page */
+
+/* make the timer display very large */
+#timer {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* layout for the six single-digit inputs */
+#split-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  margin-bottom: 1em;
+}
+
+#split-input input {
+  width: 1.5em;
+  font-size: 1.2em;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#split-input span {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* simple styling for the splits table */
+#splits {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+#splits th,
+#splits td {
+  border: 1px solid #aaa;
+  padding: 0.3em 0.5em;
+  text-align: center;
+}
+
+#splits thead {
+  background-color: #f0f0f0;
+}
+
+#startStop {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  /* match your start/stop colors: */
+  background-color: #FCCD4C;
+  color: #030303;
+}
+
+#startStop:hover {
+  transform: scale(1.05);
+  background-color: #e6c044;
+}
+
+#reset {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  /* match your start/stop colors: */
+  background-color: #FCCD4C;
+  color: #030303;
+}
+
+#reset:hover {
+  transform: scale(1.05);
+  background-color: #e6c044;
+}
