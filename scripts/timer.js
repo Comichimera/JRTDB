@@ -1,5 +1,6 @@
 // ─── Load & parse world-record splits from CSV ─────────────────────────────
 const recordCumMs = [];
+const recordNames   = [];
 
 async function loadRecordSplits() {
   const res  = await fetch('data/splits.csv');
@@ -8,10 +9,13 @@ async function loadRecordSplits() {
 
   let cum = 0;
   for (const line of lines) {
-    const [, segStr] = line.split(',');
-    const ms = Math.round(parseFloat(segStr) * 1000);
+    // split into [name, time]
+    const [name, raw] = line.split(',');
+    const ms = Math.round(parseFloat(raw) * 1000);
+
     cum += ms;
     recordCumMs.push(cum);
+    recordNames.push(name.trim());
   }
 }
 
@@ -68,35 +72,37 @@ async function loadRecordSplits() {
 
   // ─── Split Creation ───────────────────────────────────────────────────────
   function addSplit() {
-    const vals  = inputs.map(i => i.value);
-    const segMs = parseSegmentMs(vals);
-    cumulativeMs += segMs;
-    splitCount++;
+  const vals  = inputs.map(i => i.value);
+  const segMs = parseSegmentMs(vals);
 
-    // record cumulative for this split
-    const recMs = recordCumMs[splitCount - 1] || 0;
+  cumulativeMs += segMs;
+  splitCount++;
 
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>Split ${splitCount}</td>
-      <td>${formatMs(recMs)}</td>
-      <td>${formatMs(cumulativeMs)}</td>
-      <td>${formatMs(segMs)}</td>
-    `;
-    tableBody.insertBefore(row, tableBody.firstChild);
+  const splitName = recordNames[splitCount - 1] || `Split ${splitCount}`;
 
-    cumDisplay.textContent = formatMs(cumulativeMs);
+  const recMs = recordCumMs[splitCount - 1] || 0;
 
-    inputs.forEach(i => i.value = '');
-    inputs[0].focus();
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${splitName}</td>
+    <td>${formatMs(recMs)}</td>
+    <td>${formatMs(cumulativeMs)}</td>
+    <td>${formatMs(segMs)}</td>
+  `;
+  tableBody.insertBefore(row, tableBody.firstChild);
 
-    if (splitCount >= MAX_SPLITS) {
-      clearInterval(timerInterval);
-      timerInterval = null;
-      startStopBtn.textContent = 'Done';
-      inputs.forEach(i => i.disabled = true);
-    }
+  cumDisplay.textContent = formatMs(cumulativeMs);
+
+  inputs.forEach(i => i.value = '');
+  inputs[0].focus();
+
+  if (splitCount >= MAX_SPLITS) {
+    clearInterval(timerInterval);
+    timerInterval      = null;
+    startStopBtn.textContent = 'Done';
+    inputs.forEach(i => i.disabled = true);
   }
+}
 
   // ─── Event Wiring ─────────────────────────────────────────────────────────
   startStopBtn.addEventListener('click', () => {
