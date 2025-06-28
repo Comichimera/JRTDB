@@ -23,7 +23,7 @@
         </div>
         <div class="timer-box">
           <div class="timer-label">IG Timer</div>
-          <h2 id="cumtimer">0:00:00.000</h2>
+          <h2 id="cumtimer">0:00:00</h2>
         </div>
       </div>
 
@@ -41,7 +41,9 @@
 
       <!-- Start/Stop timer -->
       <button id="startStop">Start</button>
-      <button id="reset">Reset</button> <br>
+      <button id="reset">Reset</button>
+      <button id="undo" disabled>Undo</button>
+      <button id="export">Export</button>
 
       <!-- Splits table -->
       <table id="splits">
@@ -51,6 +53,7 @@
             <th>Record</th>
             <th>Split Time</th>
             <th>Segment Time</th>
+            <th>Diff</th>
           </tr>
         </thead>
         <tbody>

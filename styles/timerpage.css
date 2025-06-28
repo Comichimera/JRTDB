@@ -1,5 +1,9 @@
 /* styles/timerpage.css – overrides just for the timer page */
 
+.main-container {
+padding: 0 28%;
+}
+
 /* make the timer display very large */
 #timers {
   display: flex;
@@ -64,7 +68,6 @@
 /* simple styling for the splits table */
 #splits {
   width: 100%;
-  max-width: 500px;
   margin: 0 auto;
   border-collapse: collapse;
   font-size: 0.9em;
@@ -81,6 +84,9 @@
   background-color: #f0f0f0;
 }
 
+#reset,
+#undo,
+#export,
 #startStop {
   font-size: 1em;
   padding: 0.5em 1em;
@@ -93,24 +99,22 @@
   color: #030303;
 }
 
+#reset:hover,
+#undo:hover,
+#export:hover,
 #startStop:hover {
   transform: scale(1.05);
   background-color: #e6c044;
 }
 
-#reset {
-  font-size: 1em;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  /* match your start/stop colors: */
-  background-color: #FCCD4C;
-  color: #030303;
-}
-
-#reset:hover {
-  transform: scale(1.05);
-  background-color: #e6c044;
+#reset:disabled,
+#undo:disabled,
+#export:disabled,
+#startStop:disabled {
+  background-color: #e8d59a;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.8;
+  transform: none;
+  pointer-events: none;
 }
