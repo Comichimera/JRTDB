@@ -1,4 +1,10 @@
 // Function to fetch and parse CSV files
+const easterEggs = {
+  "404": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Rick-roll
+  "69" : "https://i.imgur.com/N1cE0yV.gif",             // “nice”
+  // drop more pairs here whenever you want
+};
+
 function fetchCSV(file) {
     return fetch(file)
         .then(response => response.text())
@@ -27,6 +33,10 @@ function transformYoutubeUrl(url) {
 function generateRunPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const runId = parseInt(urlParams.get('run'), 10); // Ensure runId is a number
+    if (easterEggs[runId]) {
+        location.replace(easterEggs[runId]);
+    }
+
 
     if (!runId) {
         document.getElementById('data-container').innerHTML = '<p>Error: No run specified in the URL.</p>';
