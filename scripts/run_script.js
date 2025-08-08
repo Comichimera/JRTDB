@@ -1,8 +1,6 @@
 // Function to fetch and parse CSV files
 const easterEggs = {
-  "404": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Rick-roll
-  "69" : "https://i.imgur.com/N1cE0yV.gif",             // “nice”
-  // drop more pairs here whenever you want
+  "up": "https://www.youtube.com/watch?v=JUMK-jQiyd0", // Rick-roll
 };
 
 function fetchCSV(file) {
